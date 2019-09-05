@@ -11,7 +11,7 @@ public class NumericFunctions {
 	}
 	
 	public static void main(String[] args) {
-		for (int n = 1; n <= 10; n++) {
+		for (int n = -2; n <= 20; n++) {
 			System.out.println(n);
 			System.out.println(" ");
 			System.out.println(factorial(n));
