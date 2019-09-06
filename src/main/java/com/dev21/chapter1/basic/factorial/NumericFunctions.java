@@ -2,9 +2,9 @@ package com.dev21.chapter1.basic.factorial;
 
 public class NumericFunctions {
 	
-	public static int factorial(int n) {
+	public static int factorial(long n) {
 		int result = 1;
-		for (int i = 2; i <= n; i++) {
+		for (long i = 2; i <= n; i++) {
 			result *= i;
 		}
 		return result;
