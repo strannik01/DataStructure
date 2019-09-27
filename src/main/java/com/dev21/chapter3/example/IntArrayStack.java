@@ -4,8 +4,21 @@ import java.util.EmptyStackException;
 
 public class IntArrayStack implements IntStack {
 	
+	/**
+	 * Cima de la pila
+	 * 
+	 */
 	private int top = -1;
+	
+	/**
+	 * Arreglo de enteros
+	 * 
+	 */
 	private int[] data;
+	
+	/**
+	 * Capacidad inicial de la pila
+	 */
 	private static final int DEFAULT_CAPACITY = 10;
 	
 	public IntArrayStack() {
@@ -19,8 +32,10 @@ public class IntArrayStack implements IntStack {
 
 	@Override
 	public int peek() {
-		// TODO Auto-generated method stub
-		return 0;
+		if (isEmpty()) {
+			throw new EmptyStackException();
+		}
+		return data[top];
 	}
 
 	@Override

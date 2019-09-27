@@ -4,10 +4,19 @@ public class IntStackTest {
 
 	public static void main(String[] args) {
 		IntStack s = new IntArrayStack();
-		for (int i = 10; i < 30; i++) {
+		for (int i = 0; i < 6; i++) {
 			s.push(i);
 		}
 		
+		int data = s.peek();
+		System.out.println(data);
+		
+		
+		s = new IntLinkedStack();
+		
+		IntStack t = new IntLinkedStack();
+		
+		s.push(100);
 	}
 
 }
