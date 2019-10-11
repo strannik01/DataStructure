@@ -1,5 +1,6 @@
-package com.dev21.pluralsigth.data;
+package com.dev21.pluralsigth.data.apps;
 
+import com.dev21.pluralsigth.data.BasicStack;
 
 public class CardStackApp {
 	BasicStack<String> stack = new BasicStack<String>();
