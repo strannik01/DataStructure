@@ -1,22 +1,30 @@
 package com.dev21.chapter3.example;
 
+import java.util.EmptyStackException;
+
 public class IntLinkedStack implements IntStack {
 	private Node top;
+	private int size;
 
 	@Override
 	public boolean isEmpty() {
-		// TODO Auto-generated method stub
-		return false;
+		return top == null;
 	}
 
 	@Override
 	public int peek() {
-		// TODO Auto-generated method stub
-		return 0;
+		if (isEmpty()) {
+			throw new EmptyStackException();
+		}
+		return top.data;
 	}
 
 	@Override
 	public int pop() {
+		if (isEmpty()) {
+			throw new EmptyStackException();
+		}
+		--size;
 		// top ya no debe apunta al primer elemento en la pila sino al segundo
 		// top = top.next;
 		int result = top.data; // top apunta aquí al primer elemento
@@ -32,15 +40,14 @@ public class IntLinkedStack implements IntStack {
 		// 2) Top adquiere nuevo valor que es el nodo que acaba de ser creado.
 //		top = p;
 		
-		
+		size++;
 		// En una sola línea sería así
 		top = new Node(item, top);
 	}
 
 	@Override
 	public int size() {
-		// TODO Auto-generated method stub
-		return 0;
+		return size;
 	}
 	
 	private class Node {
