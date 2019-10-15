@@ -16,7 +16,10 @@ public class IntStackTest {
 		
 		IntStack t = new IntLinkedStack();
 		
-		s.push(100);
+		t.push(100);
+		t.push(300);
+		t.pop();
+		
 	}
 
 }
