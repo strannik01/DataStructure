@@ -18,7 +18,7 @@ public class LinkedList<E> implements List<E> {
 			last = first;
 		} else {
 			Node<E> newLastNode = new Node<>(item);
-			last.setNext(newLastNode);
+			last.setNextElement(newLastNode);
 			last = newLastNode;
 		}
 		size++;
@@ -33,13 +33,13 @@ public class LinkedList<E> implements List<E> {
 		
 		// comienza en 1 porque ya estamos en el primer nodo
 		for (int i = 1; i < index && currentNode != null; i++) {
-			currentNode = currentNode.getNext();
+			currentNode = currentNode.getNextElement();
 		}
 		// corta la cadena de enlace y se vuelve a conectar con el nuevo nodo
 		Node<E> newNode = new Node<>(item);
-		Node<E> nextNode = currentNode.getNext();
-		currentNode.setNext(newNode);
-		newNode.setNext(nextNode);
+		Node<E> nextNode = currentNode.getNextElement();
+		currentNode.setNextElement(newNode);
+		newNode.setNextElement(nextNode);
 		size++;
 	}
 
@@ -80,23 +80,27 @@ public class LinkedList<E> implements List<E> {
 
 	private class Node<T> {
 		private T data;
-		private Node<T> next;
+		private Node<T> nextElement;
 
-		public Node(T data) {
+		public Node(T data, Node<T> nextElement) {
 			this.data = data;
-			this.next = null;
+			this.nextElement = nextElement;
+		}
+		
+		public Node(T data) {
+			this(data, null);
 		}
 
 		public T getData() {
 			return data;
 		}
 
-		public Node<T> getNext() {
-			return next;
+		public Node<T> getNextElement() {
+			return nextElement;
 		}
 
-		public void setNext(Node<T> next) {
-			this.next = next;
+		public void setNextElement(Node<T> nextElement) {
+			this.nextElement = nextElement;
 		}
 
 	}
