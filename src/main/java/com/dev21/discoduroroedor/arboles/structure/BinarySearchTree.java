@@ -211,19 +211,60 @@ public class BinarySearchTree<T extends Comparable<T>> {
 	
 	private void removeWithChild(NodeBinaryTree<T> node, int typeNode) {
 		
-		NodeBinaryTree<T> siguiente;
+		NodeBinaryTree<T> siguiente = null;
 		
 		switch (typeNode) {
 		case NODE_LEFT:
+			siguiente = node.getLeft();
 			break;
 		case NODE_RIGHT:
-			
+			siguiente = minSubTree(node.getRight());
 			break;
 		case NODES:
+			siguiente = minSubTree(node.getRight());
+			
+			if (!isRoot(siguiente.getParent())) {
+				
+				node.getLeft().setParent(siguiente);
+				node.getRight().setParent(siguiente);
+				
+				if (siguiente.getParent().getLeft() == siguiente) {
+					siguiente.getParent().setLeft(null);
+				} else if (siguiente.getParent().getRight() == siguiente) {
+					siguiente.getParent().setRight(null);
+				}
+			}
+			
+			
 			break;
+		}
+		
+		siguiente.setParent(node.getParent());
+		
+		if (!isRoot(node)) {
+			
+			if (node.getParent().getLeft() == node) {
+				node.getParent().setLeft(siguiente);
+			} else if (node.getParent().getRight() == node) {
+				node.getParent().setRight(siguiente);
+			}
+			
+		} else {
+			
 		}
 	}
 	
+	private NodeBinaryTree<T> minSubTree(NodeBinaryTree<T> node) {
+		
+		if (node != null && node.getLeft() != null) {
+			
+			while (!isLeaf(node)) {
+				node = minSubTree(node.getLeft());
+			}
+		}
+		
+		return node;
+	}
 	
 	
 }
