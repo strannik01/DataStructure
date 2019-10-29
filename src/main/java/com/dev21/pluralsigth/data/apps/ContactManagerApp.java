@@ -3,7 +3,7 @@ package com.dev21.pluralsigth.data.apps;
 import com.dev21.pluralsigth.data.BasicBinaryTree;
 
 public class ContactManagerApp {
-	BasicBinaryTree<Contact> contacts = new BasicBinaryTree<Contact>();
+	BasicBinaryTree<Contact> contacts = new BasicBinaryTree<>();
 
 	public static void main(String[] args) {
 		ContactManagerApp app = new ContactManagerApp();
