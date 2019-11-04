@@ -1,5 +1,7 @@
 package com.dev21.chapter3.stacks.array.example1;
 
+import java.util.Stack;
+
 public class IntStackTest {
 
 	public static void main(String[] args) {
@@ -15,7 +17,14 @@ public class IntStackTest {
 		operands.push(0);
 		operands.push(-12);
 		operands.push(101);
-
+		
+		Stack<String> pila = new Stack<>();
+		pila.push("5");
+		pila.push("7");
+		pila.push("10");
+		
+		pila.pop();
+		System.out.println(pila.peek());
 	}
 
 }
