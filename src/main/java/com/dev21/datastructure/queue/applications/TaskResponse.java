@@ -1,4 +1,4 @@
-package com.dev21.datastructure.queue.applications1;
+package com.dev21.datastructure.queue.applications;
 
 public class TaskResponse {
 	
