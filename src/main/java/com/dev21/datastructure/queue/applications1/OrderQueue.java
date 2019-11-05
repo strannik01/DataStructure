@@ -1,4 +1,4 @@
-package com.dev21.datastructure.queue.applications;
+package com.dev21.datastructure.queue.applications1;
 
 public interface OrderQueue<E> {
 	
