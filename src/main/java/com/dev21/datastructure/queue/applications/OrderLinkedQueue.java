@@ -2,7 +2,7 @@ package com.dev21.datastructure.queue.applications;
 
 import java.util.NoSuchElementException;
 
-public class LinkedQueue<E> implements Queue<E> {
+public class OrderLinkedQueue<E> implements OrderQueue<E> {
 	private Node<E> front;
 	private Node<E> rear;
 	private int size;

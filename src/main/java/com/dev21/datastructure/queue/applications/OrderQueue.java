@@ -1,6 +1,6 @@
 package com.dev21.datastructure.queue.applications;
 
-public interface Queue<E> {
+public interface OrderQueue<E> {
 	
 	E dequeue();
 	
